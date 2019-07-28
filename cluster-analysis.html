@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://d3js.org/d3.v5.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Heebo:100,300,300i, 400" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<title></title>
+<style>
+body, html {
+	font-family:'Heebo', sans-serif;
+	top:0;
+	left:0;
+	margin:0;
+	scroll-snap-type: y mandatory;
+}
+.content {
+	height:fit-content;
+}
+.content img {
+	height:10vh;
+	width:auto;
+	display:inline-block;
+	cursor:pointer;
+	mix-blend-mode: multiply;
+}
+.holder {
+	display:inline-block;
+	margin:1%;
+	mix-blend-mode: multiply;
+	transition:0.25s all ease-in-out;
+}
+p {
+	font-size:0.8em;
+	font-weight:300;
+}
+i {
+	background-color:#666666;
+	border-radius:50%;
+	padding:3%;
+}
+.play {
+	display:inline-block;
+	margin-left:2%;
+	mix-blend-mode:multiply;
+	cursor:pointer;
+	transition:0.5s all ease-in-out;
+	transform-origin:50% 50%;
+	vertical-align:middle;
+}
+.play:hover {
+	transform:scale(1.1);
+}
+.holder:hover {
+	transform-origin:50% 50%;
+	transform:scale(1.5);
+}
+.tooltip {
+	opacity:0;
+	position:fixed;
+	width:5em;
+	height:auto;
+	z-index:100;
+	background-color:#F2F2F2;
+	border:0.05em #CCCCCC;
+	border-radius:0.2em;
+	pointer-events:none;
+	transition:0.25s all ease-in-out;
+	padding:2%;
+	color:#1d1d1d;
+}
+.tooltip em {
+	display:inline-block;
+	font-style:normal;
+	padding-right:5%;
+	line-height:0.2em;
+}
+.tooltip p {
+	display:inline-block;
+	line-height:0.2em;
+}
+.item {
+	display:block;
+	font-size:0.8em;
+}
+h1 {
+	display:inline-block;
+	vertical-align:middle;
+	font-size:5em;
+	font-weight:900;
+	letter-spacing:-0.05em;
+	text-align:center;
+	color:#F2F2F2;
+	width:100%;
+}
+.identity {
+	display:inline-block;
+	position:absolute;
+	width:100%;
+	vertical-align:middle;
+	z-index:-1;
+}
+.cluster {
+	padding:2%;
+	margin:0%;
+	margin-bottom:0%;
+	margin-top:0%;
+	overflow:hidden;
+	position:relative;
+	height:100vh;
+	scroll-snap-align: center;
+}
+.model {
+	width:100%;
+	margin:auto;
+	margin-top:0%;
+	color:#1d1d1d;
+}
+.feature {
+	width:20%;
+	display:inline-block;
+	vertical-align:top;
+	text-align:center;
+}
+.feature h2 {
+	font-weight:100;
+	font-size:1em;
+	letter-spacing:0.05em;
+}
+.feature p {
+	font-size:5em;
+	text-align:center;
+	display:block;
+	line-height:1em;
+	margin-top:3%;
+}
+.button {
+	width:fit-content;
+	position:absolute;
+	bottom:20%;
+	text-align:center;
+	padding:1% 5%;
+	border:0.05em solid #F2F2F2;
+	color:#F2F2F2;
+	border-radius:2em;
+	transition:0.25s all ease-in-out;
+	cursor:pointer;
+}
+.button:hover {
+	border: 0.05em solid #D8A693;
+	background-color:#D8A693;
+	box-shadow: 0em 0em 0.5em #CCCCCC;
+	color:white!important;
+}
+#main {
+	background-color:#D9AC9B;
+		display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+#main img {
+	width:100%;
+	text-align:center;
+	mix-blend-mode:multiply;
+}
+#Melody {
+	background-image: linear-gradient(#D9AC9B, #B9D9BB);
+}
+#Magic {
+	background-image: linear-gradient(#B9D9BB, #FFCA90);
+}
+#Building {
+	background-image: linear-gradient(#FFCA90, #DAE2E7);
+}
+#Emerging {
+	background-image: linear-gradient(#DAE2E7, #C7B299);
+}
+#Drama {
+	background-image: linear-gradient(#C7B299, #1d1d1d);
+}
+</style>
+</head>
+
+<body>
+	<div class="tooltip"></div>
+	<audio src="assets/music.wav"></audio>
+	<div class="cluster" id="main">
+		<h1>Cluster Analysis</h1>
+		<div class="model">
+			<div class="feature">
+				<h2>Musical Notation</h2>
+				<img src="assets/images/feature_transformation.png">
+			</div>
+			<div class="feature">
+				<h2>Timestamp</h2>
+				<p>2.28</p>
+			</div>
+			<div class="feature">
+				<h2>Measure</h2>
+				<p>2</p>
+			</div>
+			<div class="feature">
+				<h2>Beat</h2>
+				<p>3</p>
+			</div>
+		</div>
+
+		<div class="button">View Clusters</div>
+	</div>
+</body>
+
+<script type="text/javascript" src="js/cluster.js"></script>
+</html>

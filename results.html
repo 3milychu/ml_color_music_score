@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Color-coded Music Score</title>
+	<script src="https://d3js.org/d3.v5.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Heebo:100,300,300i, 400" rel="stylesheet">
+</head>
+<style>
+body, html {
+	font-family:'Heebo', sans-serif;
+}
+h1{
+	color:#1d1d1d;
+	margin-left:2%;
+	margin-bottom:0%;
+}
+#vis{
+	display:block;
+	width:100%;
+	height:fit-content;
+	z-index:100;
+	transform-origin:0 0;
+	transition:all 0.10s ease-in-out;
+}
+.page-holder {
+	position:relative;
+	margin-top:5%;
+	display:inline-block;
+	vertical-align:top;
+	height:80%;
+	width:auto;
+	cursor:pointer;
+	line-height:0;
+	transition:all 0.25s ease-in-out;
+	animation:1s fadeIn ease-in-out;
+}
+.page-holder img {
+	height:100%;
+	width:object-fit;
+}
+/*clusters*/
+.label0, .label1, .label2, .label3, .label4{
+	height:1em;
+	width:100%;
+	line-height:0em;
+	margin:0;
+	padding:0;
+	display:block;
+	cursor:help;
+}
+.label0{
+	background-color:#D9AC9B;
+}
+.label1{
+	background-color:#B9D9BB;
+}
+.label2{
+	background-color:#FFCA90;
+}
+.label3{
+	background-color:#DAE2E7;
+}
+.label4{
+	background-color:#D5C6B3;
+}
+</style>
+
+<body>
+<h1>Color-coded music score</h1>
+<div id='vis'></div>
+</body>
+
+<script type="text/javascript">
+
+total_images = 274
+
+getScore();
+
+//calculate which measure each beat falls under
+function getScore() {
+d3.json('cluster_results.json')
+.then(function(data) {
+	console.log(data)
+	for(i=1;i<total_images;i++){
+		target=document.querySelector('#vis');
+		height=window.innerHeight
+		div = document.createElement('div');
+		div.setAttribute("class","page-holder");
+		div.setAttribute("id","page-holder"+i);
+		overlay=document.createElement('div');
+		img = document.createElement('img');
+		img.src="images/"+i +".png";
+		target.style.height=height/8+"px";
+		cluster = document.createElement('div');
+		label = data[i]['labels'];
+		cluster.setAttribute("class", "label"+label + " clusterlabel")
+		div.appendChild(img);
+		div.appendChild(cluster);
+		target.appendChild(div);
+		}
+		})
+	.catch(function(error){
+	})
+}
+</script>
+</html>
