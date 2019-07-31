@@ -310,9 +310,6 @@ function showClusters(data){
 		}
 		div.setAttribute('id', name)
 		h1.innerHTML=name
-		play = document.createElement('div')
-		play.setAttribute("class", "play")
-		play.innerHTML="<i class='material-icons'>play_arrow</i>"
 		identity = document.createElement('img')
 		identity.setAttribute("class","identity")
 		identity.src ="assets/images/cluster"+num+".png"
@@ -329,8 +326,6 @@ function showClusters(data){
 			holder.appendChild(img)
 			content.appendChild(holder)
 		}
-		// div.appendChild(identity)
-		h1.appendChild(play)
 		div.appendChild(h1)
 		div.appendChild(p)
 		div.appendChild(content)
