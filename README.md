@@ -7,7 +7,7 @@ Full guide: https://medium.com/nightingale/color-coding-music-scores-with-machin
 
 ## Raw data: /original-score
 
-Directory containing the clean, unmarked electronic music score images for Fantasiestuckie Op. 73 which is used for the tutorial
+Directory containing the clean, unmarked electronic music score images for Fantasiestuckie Op. 73 which is used for the tutorial. Provided by Michael Schober (The New School for Social Research) and Neta Spiro (Royal College of Music).
 
 ## Image data: /images
 
@@ -15,7 +15,7 @@ Directory containing sliced images by beat from /original-score images
 
 ## Metadata: timestamps.csv
 
-Metadata information of timing (measure, beat and timestamp in musical performance recording of the piece) 
+Metadata information of timing (measure, beat and timestamp in musical performance recording of the piece). Provided by Michael Schober (The New School for Social Research) and Neta Spiro (Royal College of Music)
 
 ## Model: k-means.ipynb
 
