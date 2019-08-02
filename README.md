@@ -4,11 +4,6 @@ This repo provides instructions to take images of a music score and color code i
 
 Full guide: https://medium.com/nightingale/color-coding-music-scores-with-machine-learning-a2443ef27d96
 
-Features used: 
-1. musical notation (intended key, tempo, tone, feeling)
-2. sequential progression
-
-These features which may be removed or substituted) 
 
 ## Raw data: /original-score
 
