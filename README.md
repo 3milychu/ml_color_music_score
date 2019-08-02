@@ -33,5 +33,5 @@ Example: https://3milychu.github.io/ml_color_music_score/results.html
 
 Interactive visualization of beats grouped by named clusters
 
-https://3milychu.github.io/ml_color_music_score/cluster-analysis.html
+Example: https://3milychu.github.io/ml_color_music_score/cluster-analysis.html
 
