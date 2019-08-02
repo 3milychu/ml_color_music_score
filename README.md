@@ -27,7 +27,11 @@ Credits to Aaron Hill, Machine Learning Professor at Parsons School of Design fo
 
 html/css/js template to generate visualization of music score with color bars underneath
 
+Example: https://3milychu.github.io/ml_color_music_score/results.html
+
 ## Data Visualization #2: cluster-analysis.html
 
 Interactive visualization of beats grouped by named clusters
+
+https://3milychu.github.io/ml_color_music_score/cluster-analysis.html
 
